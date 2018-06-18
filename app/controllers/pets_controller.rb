@@ -11,6 +11,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
+    @pet = Pet.create(params[:pet])
     binding.pry
   end
 
