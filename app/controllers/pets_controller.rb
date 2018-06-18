@@ -13,9 +13,9 @@ class PetsController < ApplicationController
   post '/pets' do
     @pet = Pet.create(params[:pet])
     if !params[:owner][:name].emtpy?
-
+      @pet.owner = Owner.create(params[:owner])
     end
-    
+
   end
 
   get '/pets/:id' do
