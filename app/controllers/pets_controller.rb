@@ -28,7 +28,8 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.update(params[:pet])
     if !params[:owner][:name].emtpy?
-
+      @owner = Owner.create(params[:owner])
+      @pet.owner = @owner
     end
     binding.pry
 
