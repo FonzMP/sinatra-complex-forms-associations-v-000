@@ -15,7 +15,7 @@ class PetsController < ApplicationController
     if !params[:owner][:name].emtpy?
       @pet.owner = Owner.create(params[:owner])
     end
-
+    @pet.save
   end
 
   get '/pets/:id' do
