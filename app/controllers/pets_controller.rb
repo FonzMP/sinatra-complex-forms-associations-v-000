@@ -12,7 +12,7 @@ class PetsController < ApplicationController
 
   post '/pets' do
     @pet = Pet.create(params[:pet])
-    if params[:owner][:name].emtpy?
+    if !params[:owner][:name].emtpy?
       @owner = Owner.find(params[:pet][:owner_id])
       @pet.owner_id << @owner.id
     end
