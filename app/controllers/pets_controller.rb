@@ -18,7 +18,6 @@ class PetsController < ApplicationController
         @pet.owner_id = @owner.id
     end
     @pet.save
-    binding.pry
   end
 
   get '/pets/:id' do
